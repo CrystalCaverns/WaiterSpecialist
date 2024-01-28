@@ -1,0 +1,11 @@
+name: WaiterSpecialist
+version: '${version}'
+main: cc.waiterspecialist.WaiterSpecialist
+api-version: '1.20'
+authors: [japicraft]
+website: https://crystalcaverns.net
+depend: [CommandPanels,LuckPerms]
+commands:
+  lobby:
+    description: Teleports the player to the server's global spawn point.
+    aliases: [hub,spawn]
