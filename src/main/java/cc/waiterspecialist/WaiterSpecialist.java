@@ -10,7 +10,6 @@ import java.util.List;
 import static org.bukkit.Bukkit.getConsoleSender;
 
 public final class WaiterSpecialist extends JavaPlugin {
-
     @Override
     public void onEnable() {
         PluginCommand command = getCommand("lobby");

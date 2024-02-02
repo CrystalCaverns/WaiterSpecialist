@@ -11,6 +11,7 @@ import org.bukkit.event.EventHandler;
 import org.bukkit.event.Listener;
 import org.bukkit.event.inventory.InventoryCloseEvent;
 import org.bukkit.plugin.Plugin;
+import static org.bukkit.plugin.java.JavaPlugin.getPlugin;
 
 public class Connect implements Listener {
     @EventHandler
@@ -20,7 +21,7 @@ public class Connect implements Listener {
         out.writeUTF("crystal_forest");
         Player player = Bukkit.getPlayerExact(e.getPlayer().getName());
         assert player != null;
-        Plugin plugin = WaiterSpecialist.getPlugin(WaiterSpecialist.class);
+        Plugin plugin = getPlugin(WaiterSpecialist.class);
         player.sendPluginMessage(plugin, "BungeeCord", out.toByteArray());
         Bukkit.getScheduler().runTaskLater(plugin, () -> {
             if (player.isOnline()) {

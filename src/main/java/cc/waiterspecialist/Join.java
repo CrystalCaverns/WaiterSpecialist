@@ -19,6 +19,7 @@ import org.bukkit.event.EventHandler;
 import org.bukkit.event.Listener;
 import org.bukkit.event.player.PlayerJoinEvent;
 import java.io.File;
+import static org.bukkit.plugin.java.JavaPlugin.getPlugin;
 
 public class Join implements Listener {
     @EventHandler
@@ -45,7 +46,7 @@ public class Join implements Listener {
             console.sendMessage(added);
         }
         Panel panel = new Panel(new File("/home/container/plugins/CommandPanels/panels/welcome.yml"), "welcome");
-        Bukkit.getScheduler().runTaskLater(WaiterSpecialist.getPlugin(WaiterSpecialist.class), (overtime) -> {
+        Bukkit.getScheduler().runTaskLater(getPlugin(WaiterSpecialist.class), (overtime) -> {
             if (p.isOnline()) {
                 TextComponent message = Component.text("Uh oh, something went wrong. Please try to connect again. If this is happening repeatedly, please tell us on Discord! (Error: ServerLobbyOfflineException)")
                     .color(NamedTextColor.RED);
