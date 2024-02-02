@@ -1,6 +1,6 @@
 # Waiter Specialist
 
-Specialist for the Waiting room on the Crystal Caverns Minecraft server, designed to load resources to players and send them to the server.
+Specialist for the Waiting Room on the Crystal Caverns Minecraft server, designed to load resources to players and send them to the server.
 
 While this is a standalone plugin, it should not be used by anyone other than us, as it is specifically made just for Crystal Caverns.
 
