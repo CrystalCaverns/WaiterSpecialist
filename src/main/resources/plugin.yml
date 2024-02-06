@@ -9,3 +9,7 @@ commands:
   lobby:
     description: Teleports the player to the server's global spawn point.
     aliases: [hub,spawn]
+  crystalcaverns:
+    description: Internal processes.
+    aliases: [cc]
+    permission: crystalcaverns.command.main

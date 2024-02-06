@@ -1,10 +1,7 @@
 package cc.waiterspecialist;
 
-import me.rockyhawk.commandpanels.api.Panel;
-import me.rockyhawk.commandpanels.openpanelsmanager.PanelPosition;
 import net.kyori.adventure.text.Component;
 import net.kyori.adventure.text.TextComponent;
-import net.kyori.adventure.text.format.NamedTextColor;
 import net.kyori.adventure.text.format.TextColor;
 import net.luckperms.api.LuckPerms;
 import net.luckperms.api.LuckPermsProvider;
@@ -18,8 +15,6 @@ import org.bukkit.entity.Player;
 import org.bukkit.event.EventHandler;
 import org.bukkit.event.Listener;
 import org.bukkit.event.player.PlayerJoinEvent;
-import java.io.File;
-import static org.bukkit.plugin.java.JavaPlugin.getPlugin;
 
 public class Join implements Listener {
     @EventHandler
@@ -45,14 +40,5 @@ public class Join implements Listener {
                 .color(TextColor.fromHexString("#9944FF"));
             console.sendMessage(added);
         }
-        Panel panel = new Panel(new File("/home/container/plugins/CommandPanels/panels/welcome.yml"), "welcome");
-        Bukkit.getScheduler().runTaskLater(getPlugin(WaiterSpecialist.class), (overtime) -> {
-            if (p.isOnline()) {
-                TextComponent message = Component.text("Uh oh, something went wrong. Please try to connect again. If this is happening repeatedly, please tell us on Discord! (Error: ServerLobbyOfflineException)")
-                    .color(NamedTextColor.RED);
-                p.kick(message);
-            }
-        }, 12000L);
-        panel.open(p, PanelPosition.Top);
     }
 }
